@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Code Search</title>
+</head>
+<body style="background:#101827;color:white;font-family:Arial;text-align:center;padding:30px">
+
+<h2>🌍 Global Code Search</h2>
+
+<input id="code" type="text" placeholder="Enter your code"
+style="padding:14px;width:90%;box-sizing:border-box">
+
+<br><br>
+
+<button id="search" style="padding:14px 25px">
+Search Code
+</button>
+
+<p id="result">Enter your code above.</p>
+
+<script>
+document.getElementById("search").addEventListener("click", function() {
+    const code = document.getElementById("code").value.trim().toLowerCase();
+    const result = document.getElementById("result");
+
+    if (code === "abcde135246*" || code === "abcde") {
+        result.textContent = "Code Found: Hashanpreet Singh Mahi";
+        result.style.color = "#4ade80";
+    } else {
+        result.textContent = "Code not found. Please check your code.";
+        result.style.color = "#f87171";
+    }
+});
+</script>
+
+</body>
+</html>
