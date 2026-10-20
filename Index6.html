@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worldwide Code Recognition</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #101827;
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+}
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #1f2b40;
+  border-radius: 18px;
+}
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+button {
+  background: #38bdf8;
+  color: #101827;
+  font-weight: bold;
+  cursor: pointer;
+}
+#result {
+  margin-top: 20px;
+  overflow-wrap: anywhere;
+}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>🌍 Global Code Search</h2>
+  <p>Enter your unique code</p>
+
+  <input id="code" placeholder="Enter code here">
+
+  <button onclick="searchCode()">Search Code</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+function searchCode() {
+  const code = document.getElementById("code")
+    .value.trim().toLowerCase();
+
+  const codes = {
+    "abcde135246*": "Hashanpreet Singh Mahi",
+    "abcde": "Hashanpreet Singh Mahi"
+  };
+
+  const result = document.getElementById("result");
+
+  if (codes[code]) {
+    result.innerHTML = "<h3>✅ Code Found</h3><p></p>";
+    result.querySelector("p").textContent = codes[code];
+  } else {
+    result.textContent = "❌ Code not found";
+  }
+}
+</script>
+</body>
+</html>
